@@ -1,19 +1,33 @@
 import React from 'react'
 import "./Modal.css"
+import { ModalBackground,ModalContainer,TitleBTN ,BotaoCaiFora, Texto} from './Estilizados'
 function Modal({user,setShowModal}) {
   console.log(user)
   return (
-    <div className='modalBackground'>
-      <div className="modalContainer">
-        <div className="titleCloseBtn">
-          <button
+    <ModalBackground>
+      <ModalContainer>
+        <TitleBTN>
+          <BotaoCaiFora
             onClick={ ()=>setShowModal(false)}
           >
             Sair
-          </button>
+          </BotaoCaiFora>
+        </TitleBTN>
+        <div>
+          <div>
+            <img src={user.picture.large} alt="" />
+          </div>
+          <div>
+            <Texto>
+              {user.name.first + ' ' + user.name.last} 
+            </Texto>
+            <Texto>
+              {user.location.country}
+            </Texto>
+          </div>
         </div>
-      </div>
-    </div>
+      </ModalContainer>
+    </ModalBackground>
   )
 }
 
