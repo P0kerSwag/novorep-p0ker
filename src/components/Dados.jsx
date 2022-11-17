@@ -6,7 +6,11 @@ function Dados({users,dadosDoInput}) {
   return (
     <>
       <Galeria>
-        {users.map((user,index)=>
+        {users.filter((user)=>
+        user.name.first.toLowerCase().includes(dadosDoInput.nome.toLowerCase()) &&
+        user.dob.age == dadosDoInput.idade  && 
+        user.nat.toUpperCase().includes(dadosDoInput.pais.toUpperCase()) 
+        ).map((user,index)=>
           <User
             key={index}
             user={user}

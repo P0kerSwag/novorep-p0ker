@@ -31,7 +31,7 @@ function App() {
       </Fundo>
    </>
   );
-
+}
 export default App;
 // git config --global user.name "juliovianadev"
 // git config --global user.email "juliovianadev@GMAIL.COM"
